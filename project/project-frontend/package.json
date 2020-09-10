@@ -1,0 +1,79 @@
+{
+  "name": "project-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "jest",
+    "lint": "vue-cli-service lint",
+    "wc:all": "vue-cli-service build --target wc --name project 'src/components/*/*.vue'"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
+    "bootstrap-vue": "^2.16.0",
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11",
+    "vue-axios": "^2.1.5"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.18.2",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "^4.5.4",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/test-utils": "^1.0.3",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "jest": "^26.4.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.1",
+    "vue-template-compiler": "^2.6.11",
+    "vue-jest": "^3.0.6"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {},
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^[^.]+.vue$": "vue-jest",
+      "^.+\\.js$": "babel-jest"
+    },
+    "testURL": "http://localhost/"
+  }
+}

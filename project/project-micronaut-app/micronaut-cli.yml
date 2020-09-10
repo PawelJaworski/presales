@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: pl.javorex.pm.project
+testFramework: spock
+sourceLanguage: java
+buildTool: maven
+features: [app-name, data, data-jpa, docker, file-watch, graalvm, http-client, java, java-application, jdbc-hikari, logback, maven, netty-server, postgres, readme, security-annotations, security-jwt, shade, spock, testcontainers, yaml]

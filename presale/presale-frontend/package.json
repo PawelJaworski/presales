@@ -1,0 +1,88 @@
+{
+  "name": "presale-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "serve:dev": "vue-cli-service serve --mode development",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "wc:ProjectInfo": "vue-cli-service build --target wc --name psale-project-info ../project-frontend/src/components/projectInfo/ProjectInfo.vue",
+    "wc:ProjectList": "vue-cli-service build --target wc --name psale-project-list ../project-frontend/src/components/projectList/ProjectList.vue",
+    "wc:all": "vue-cli-service build --target wc --name psale 'src/components/project/*/*.vue'",
+    "test:unit": "jest"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.0.0-rc.8",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
+    "bootstrap-vue": "^2.16.0",
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11",
+    "vue-axios": "^2.1.5",
+    "vue-router": "^3.4.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/test-utils": "^1.0.4",
+    "axios-mock-adapter": "^1.18.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.3.0",
+    "css-loader": "^4.2.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "jest": "^26.4.2",
+    "jest-mock": "^26.3.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.1",
+    "style-loader": "^1.2.1",
+    "ts-jest": "^26.2.0",
+    "vue-jest": "^3.0.6",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "proxy": {
+    "*": {
+      "target": "http://localhost:8001"
+    }
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^[^.]+.vue$": "vue-jest",
+      "^.+\\.js$": "babel-jest"
+    },
+    "testURL": "http://localhost/"
+  }
+}
