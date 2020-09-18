@@ -37,7 +37,6 @@ import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import {BootstrapVue} from "bootstrap-vue"
-//import {ProjectInfo} from "@/components/project/model/ProjectInfo";
 
 axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost*';
@@ -52,10 +51,7 @@ export default {
     server_context: String
   },
   data() {
-    const projects = [
-        // new ProjectInfo(1, 'Energeia', 'Aplikacja do sprzedaży polis'),
-        // new ProjectInfo(2, 'CLS', 'Aplikacja do likwidacji szkód')
-    ]
+    const projects = []
     return {
       perPage: 3,
       currentPage: 1,

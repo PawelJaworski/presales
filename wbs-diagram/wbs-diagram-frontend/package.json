@@ -1,38 +1,28 @@
 {
-  "name": "project-frontend",
+  "name": "wbs-diagram-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "jest",
+    "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "wc:all": "vue-cli-service build --target wc --name project 'src/components/*/*.vue'"
+    "wc:all": "vue-cli-service build --target wc --name wbs-diagram 'src/components/diagram/Diagram.vue'"
   },
   "dependencies": {
-    "@vue/compiler-sfc": "^3.0.0-rc.11",
-    "axios": "^0.20.0",
-    "bootstrap": "^4.5.2",
-    "bootstrap-vue": "^2.16.0",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11",
-    "vue-axios": "^2.1.5",
-    "vue-template-compiler": "^2.6.12"
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-unit-jest": "^4.5.4",
-    "@vue/cli-service": "^4.5.6",
+    "@vue/cli-plugin-unit-jest": "^4.5.6",
+    "@vue/cli-service": "~4.5.0",
     "@vue/test-utils": "^1.0.3",
-    "axios-mock-adapter": "^1.18.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "jest": "^26.4.2",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^10.0.1",
-    "vue-jest": "^3.0.6"
+    "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
     "root": true,
@@ -63,18 +53,5 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ],
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "ts",
-      "json",
-      "vue"
-    ],
-    "transform": {
-      "^[^.]+.vue$": "vue-jest",
-      "^.+\\.js$": "babel-jest"
-    },
-    "testURL": "http://localhost/"
-  }
+  ]
 }

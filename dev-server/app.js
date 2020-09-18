@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/projectList', express.static('../project/project-frontend/dist'));
+app.use('/project', express.static('../project/project-frontend/dist'));
 app.listen(3000)
 
 module.exports = app;

@@ -1,6 +1,6 @@
-import {mount, shallowMount} from "@vue/test-utils";
 import ProjectList from "../ProjectList";
 import {ProjectInfo} from "../../../model/ProjectInfo";
+import {shallowMount} from "@vue/test-utils";
 
 const APP_CONTAINER_ID = "app-container"
 describe('Project info', () => {
@@ -10,7 +10,7 @@ describe('Project info', () => {
     test('when no project then #project-list-table is empty', () => {
         document.body.insertAdjacentHTML('beforebegin', `<div id="${APP_CONTAINER_ID}"/>`)
 
-        const table = mount(ProjectList, {
+        const table = shallowMount(ProjectList, {
             propsData: { containerId: 'app-container' }
         }).find('#project-list-table').findAll('tbody tr')
 
@@ -26,7 +26,7 @@ describe('Project info', () => {
 
         document.body.insertAdjacentHTML('beforebegin', `<div id="${APP_CONTAINER_ID}"/>`)
 
-        const wrapper = mount(ProjectList, {
+        const wrapper = shallowMount(ProjectList, {
             propsData: { containerId: 'app-container' }
         })
 
