@@ -9,25 +9,22 @@ import java.util.Optional;
 
 class ProjectCommandFacadeImpl implements ProjectCommandFacade {
     private final ProjectRepository projectRepository;
+    private final ProjectFactory projectFactory;
 
     ProjectCommandFacadeImpl(ProjectRepository projectRepository) {
         this.projectRepository = projectRepository;
+        this.projectFactory = new ProjectFactory();
     }
 
     @Override
     public void addProject(AddProjectCmd cmd) {
         String projectID = cmd.getId();
-        Optional<Project> existing = projectRepository
-                .findProjectByID(projectID);
-        if (existing.isPresent()) {
+        Optional<Project> existingProject = projectRepository.findProjectByID(projectID);
+        if (existingProject.isPresent()) {
             throw new IllegalStateException("Cannot add project with ID " + projectID + ". Already exists.");
         }
 
-        Project newProject = new Project(
-                cmd.getId(),
-                cmd.getName(),
-                cmd.getDescription()
-        );
-        projectRepository.save(newProject);
+        Project newProject = projectFactory.fromAddProjectCmd(cmd);
+        projectRepository.save( newProject );
     }
 }
