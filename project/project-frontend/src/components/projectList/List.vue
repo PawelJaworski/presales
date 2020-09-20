@@ -74,13 +74,8 @@ export default {
   },
   methods: {
     onSelect(items) {
-      console.log(`items.id ${items[0].id}`)
       const projectID = items[0].id;
       this.dispatchEvent( 'PROJECT_SELECTED', { projectID: projectID } );
-
-      console.log("Selected:")
-
-      console.log(JSON.stringify(items))
     },
     loadProjects() {
       const that = this;
