@@ -1,4 +1,4 @@
-import ProjectList from "../ProjectList";
+import ProjectList from "../List";
 import {ProjectInfo} from "../../../model/ProjectInfo";
 import {shallowMount} from "@vue/test-utils";
 

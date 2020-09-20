@@ -4,10 +4,12 @@ import ProjectListPage from '@/components/ProjectListPage';
 
 Vue.config.productionTip = false
 import VueRouter from 'vue-router'
+import ProjectInfoPage from "@/components/ProjectInfoPage";
 
 Vue.use(VueRouter)
 const routes = [
-  { path: '/', component: ProjectListPage }
+  { path: '/', component: ProjectListPage },
+  { path: '/projectInfo/:projectID', component: ProjectInfoPage }
 ]
 
 // 3. Create the router instance and pass the `routes` option

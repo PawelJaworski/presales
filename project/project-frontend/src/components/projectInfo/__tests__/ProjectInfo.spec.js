@@ -1,4 +1,4 @@
-import ProjectInfo from "../ProjectInfo.vue";
+import ProjectInfo from "../Info.vue";
 import {shallowMount} from "@vue/test-utils";
 
 const APP_CONTAINER_ID = "app-container"

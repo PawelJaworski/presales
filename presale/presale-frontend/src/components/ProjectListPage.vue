@@ -1,5 +1,5 @@
 <template>
-  <project-project-list server_context="http://localhost:8001"></project-project-list>
+  <project-list server_context="http://localhost:8001"></project-list>
 </template>
 
 <script>

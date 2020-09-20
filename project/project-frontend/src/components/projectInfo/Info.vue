@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ info }}</h1>
+    <h1>Info of {{ id }}</h1>
   </div>
 </template>
 
@@ -8,6 +8,8 @@
 export default {
   name: 'ProjectInfo',
   props: {
+    id: String,
+    server_context: String,
     containerId: {
       type: String,
       default:  "app-container"
@@ -18,11 +20,6 @@ export default {
     document.getElementById(this.containerId).addEventListener("PROJECT_SELECTED", function (e) {
       that.loadProjectInfo(e.detail);
     });
-  },
-  data() {
-    return {
-      info: "Waiting"
-    };
   },
   methods: {
     loadProjectInfo(info) {

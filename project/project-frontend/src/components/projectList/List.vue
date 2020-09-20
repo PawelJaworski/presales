@@ -48,7 +48,11 @@ Vue.use(VueAxios, axios)
 export default {
   name: 'ProjectList',
   props: {
-    server_context: String
+    server_context: String,
+    containerId: {
+      type: String,
+      default:  "app-container"
+    }
   },
   data() {
     const projects = []
@@ -70,16 +74,25 @@ export default {
   },
   methods: {
     onSelect(items) {
+      console.log(`items.id ${items[0].id}`)
+      const projectID = items[0].id;
+      this.dispatchEvent( 'PROJECT_SELECTED', { projectID: projectID } );
+
       console.log("Selected:")
+
       console.log(JSON.stringify(items))
     },
     loadProjects() {
       const that = this;
-      this.$http.get(`${this.server_context}/projects`, {
-        mode: 'no-cors'
-      }).then((res) => {
+      this.$http.get(`${this.server_context}/projects`).then((res) => {
         that.items = res.data;
       })
+    },
+    dispatchEvent(name, detail = {}) {
+      const eventName = `ProjectList.${name}`;
+      console.log(`Dispatching event ${eventName}`)
+      document.getElementById(this.containerId)
+          .dispatchEvent(new CustomEvent(eventName, {detail}))
     }
   },
   mounted() {
