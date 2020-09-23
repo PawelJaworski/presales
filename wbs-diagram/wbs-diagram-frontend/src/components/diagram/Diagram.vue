@@ -1,39 +1,30 @@
 <template>
 <div>
   <ul class="tree">
-    <li> <span @contextmenu.prevent="rightClick">EN</span>
-      <ul>
-        <li>
-          <span>FO</span>
-          <ul>
-            <li><span>REST</span></li>
-            <li><span>Frontend</span></li>
-          </ul>
-        </li>
-        <li>
-          <span>BO</span>
-          <ul>
-            <li><span>Web</span></li>
-            <li><span>Robot</span></li>
-          </ul>
-        </li>
-        <li><span>CLS</span></li>
-      </ul>
-    </li>
+    <Task :task="rootTask"/>
   </ul>
 </div>
 </template>
 
 <script>
+import {TaskModel} from "../../model/task";
+import Task from "./Task";
+
 export default {
   name: "Diagram",
+  components: {Task},
   methods: {
     rightClick() {
       alert("dupa")
+    }
+  },
+  data() {
+    return {
+      rootTask: new TaskModel(1, "dupa", [new TaskModel(2, "dupa2"), new TaskModel(3, "dupa3")])
     }
   }
 }
 </script>
 
-<style scoped src="@/assets/css/diagram.css">
+<style src="@/assets/css/diagram.css">
 </style>
