@@ -7,8 +7,7 @@ import io.micronaut.runtime.server.EmbeddedServer
 import io.micronaut.test.annotation.MicronautTest
 import pl.javorex.pm.project.application.api.ProjectCommandFacade
 import pl.javorex.pm.project.application.api.ProjectQueryFacade
-import pl.javorex.pm.project.application.api.command.AddProjectCmd
-import pl.javorex.pm.project.domain.model.Project
+import pl.javorex.pm.project.application.command.AddProjectCmd
 import pl.javorex.pm.project.domain.model.ProjectInfo
 import spock.lang.Specification
 

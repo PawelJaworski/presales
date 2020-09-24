@@ -1,4 +1,4 @@
-package pl.javorex.pm.project.application.api.response;
+package pl.javorex.pm.project.application.response;
 
 public interface ProjectInfoDto {
     String getID();

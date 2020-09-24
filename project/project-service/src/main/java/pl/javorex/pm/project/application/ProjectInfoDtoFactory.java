@@ -1,6 +1,6 @@
 package pl.javorex.pm.project.application;
 
-import pl.javorex.pm.project.application.api.response.ProjectInfoDto;
+import pl.javorex.pm.project.application.response.ProjectInfoDto;
 import pl.javorex.pm.project.domain.model.Project;
 import pl.javorex.pm.project.domain.model.ProjectInfo;
 

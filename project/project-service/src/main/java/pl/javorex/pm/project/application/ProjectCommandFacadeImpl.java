@@ -1,7 +1,7 @@
 package pl.javorex.pm.project.application;
 
 import pl.javorex.pm.project.application.api.ProjectCommandFacade;
-import pl.javorex.pm.project.application.api.command.AddProjectCmd;
+import pl.javorex.pm.project.application.command.AddProjectCmd;
 import pl.javorex.pm.project.domain.model.Project;
 import pl.javorex.pm.project.domain.repository.ProjectRepository;
 

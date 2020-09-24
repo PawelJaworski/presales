@@ -1,4 +1,4 @@
-package pl.javorex.pm.project.application.api.command;
+package pl.javorex.pm.project.application.command;
 
 public class AddProjectCmd {
     private final String id;

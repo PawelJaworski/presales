@@ -1,6 +1,6 @@
 package pl.javorex.pm.project.application.api;
 
-import pl.javorex.pm.project.application.api.response.ProjectInfoDto;
+import pl.javorex.pm.project.application.response.ProjectInfoDto;
 
 import java.util.List;
 import java.util.Optional;

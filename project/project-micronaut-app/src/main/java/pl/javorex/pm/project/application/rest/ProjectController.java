@@ -2,11 +2,11 @@ package pl.javorex.pm.project.application.rest;
 
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.PathVariable;
 import io.micronaut.security.annotation.Secured;
 import io.micronaut.security.rules.SecurityRule;
 import pl.javorex.pm.project.application.api.ProjectQueryFacade;
-import pl.javorex.pm.project.application.api.response.ProjectInfoDto;
-import pl.javorex.pm.project.domain.model.ProjectInfo;
+import pl.javorex.pm.project.application.response.ProjectInfoDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,9 +20,10 @@ public class ProjectController implements ProjectQueryFacade {
         this.queryFacade = queryFacade;
     }
 
+    @Get("/{projectId}")
     @Override
-    public Optional<ProjectInfoDto> findProjectInfo(String projectID) {
-        return queryFacade.findProjectInfo(projectID);
+    public Optional<ProjectInfoDto> findProjectInfo(@PathVariable  String projectId) {
+        return queryFacade.findProjectInfo(projectId);
     }
 
     @Get
