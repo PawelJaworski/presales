@@ -1,7 +1,7 @@
 package pl.javorex.pm.wbsdiagram.application;
 
-import pl.javorex.pm.wbs.diagram.application.api.WbsDiagramQueryFacade;
-import pl.javorex.pm.wbs.diagram.application.api.response.WbsDiagramPresentationDto;
+import pl.javorex.pm.wbsdiagram.application.api.WbsDiagramQueryFacade;
+import pl.javorex.pm.wbsdiagram.application.response.WbsDiagramPresentationDto;
 import pl.javorex.pm.wbsdiagram.domain.repository.WbsDiagramRepository;
 
 import java.util.List;

@@ -1,11 +1,9 @@
 package pl.javorex.pm.wbsdiagram.application;
 
-import pl.javorex.pm.wbs.diagram.application.api.response.TaskPresentationDto;
-import pl.javorex.pm.wbs.diagram.application.api.response.WbsDiagramPresentationDto;
+import pl.javorex.pm.wbsdiagram.application.response.TaskPresentationDto;
+import pl.javorex.pm.wbsdiagram.application.response.WbsDiagramPresentationDto;
 import pl.javorex.pm.wbsdiagram.domain.model.Task;
 import pl.javorex.pm.wbsdiagram.domain.model.WbsDiagram;
-
-import java.util.List;
 
 final class WbsDiagramPresentationDtoFactory {
     private final TaskPresentationDtoFactory taskDtoFactory = new TaskPresentationDtoFactory();

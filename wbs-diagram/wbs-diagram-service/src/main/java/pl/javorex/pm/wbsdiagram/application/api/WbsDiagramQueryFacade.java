@@ -1,6 +1,6 @@
-package pl.javorex.pm.wbs.diagram.application.api;
+package pl.javorex.pm.wbsdiagram.application.api;
 
-import pl.javorex.pm.wbs.diagram.application.api.response.WbsDiagramPresentationDto;
+import pl.javorex.pm.wbsdiagram.application.response.WbsDiagramPresentationDto;
 
 import java.util.List;
 import java.util.Optional;

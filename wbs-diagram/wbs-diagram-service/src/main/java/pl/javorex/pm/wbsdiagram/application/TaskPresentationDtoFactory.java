@@ -1,6 +1,6 @@
 package pl.javorex.pm.wbsdiagram.application;
 
-import pl.javorex.pm.wbs.diagram.application.api.response.TaskPresentationDto;
+import pl.javorex.pm.wbsdiagram.application.response.TaskPresentationDto;
 import pl.javorex.pm.wbsdiagram.domain.model.Task;
 
 import java.util.List;

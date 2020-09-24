@@ -1,7 +1,7 @@
 package pl.javorex.pm.wbsdiagram.application;
 
-import pl.javorex.pm.wbs.diagram.application.api.WbsDiagramCommandFacade;
-import pl.javorex.pm.wbs.diagram.application.api.command.AddWbsDiagramCmd;
+import pl.javorex.pm.wbsdiagram.application.api.WbsDiagramCommandFacade;
+import pl.javorex.pm.wbsdiagram.application.command.AddWbsDiagramCmd;
 import pl.javorex.pm.wbsdiagram.domain.model.WbsDiagram;
 import pl.javorex.pm.wbsdiagram.domain.repository.WbsDiagramRepository;
 

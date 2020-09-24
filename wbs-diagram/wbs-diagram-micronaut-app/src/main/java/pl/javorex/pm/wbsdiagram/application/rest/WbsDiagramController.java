@@ -2,8 +2,9 @@ package pl.javorex.pm.wbsdiagram.application.rest;
 
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import pl.javorex.pm.wbs.diagram.application.api.WbsDiagramQueryFacade;
-import pl.javorex.pm.wbs.diagram.application.api.response.WbsDiagramPresentationDto;
+import io.micronaut.http.annotation.PathVariable;
+import pl.javorex.pm.wbsdiagram.application.api.WbsDiagramQueryFacade;
+import pl.javorex.pm.wbsdiagram.application.response.WbsDiagramPresentationDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,7 +23,6 @@ public class ProjectController implements WbsDiagramQueryFacade {
     }
 
     @Get
-    @Override
     public List<WbsDiagramPresentationDto> findAll() {
         return queryFacade.findAll();
     }

@@ -1,4 +1,4 @@
-package pl.javorex.pm.wbs.diagram.application.api.command;
+package pl.javorex.pm.wbsdiagram.application.command;
 
 public class AddWbsDiagramCmd {
     private final String projectId;
