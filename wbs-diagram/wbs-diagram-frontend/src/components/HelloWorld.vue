@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import {Task} from "../model/task";
-
 export default {
   name: 'HelloWorld',
   props: {

@@ -1,6 +1,8 @@
 micronaut:
   server:
     port: 8002
+    cors:
+      enabled: true
   application:
     name: wbsdiagram
 #datasources:

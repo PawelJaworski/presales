@@ -18,6 +18,9 @@ export default {
       alert("dupa")
     }
   },
+  mounted() {
+    this.loadProjects();
+  },
   data() {
     return {
       rootTask: new TaskModel(1, "dupa", [new TaskModel(2, "dupa2"), new TaskModel(3, "dupa3")])

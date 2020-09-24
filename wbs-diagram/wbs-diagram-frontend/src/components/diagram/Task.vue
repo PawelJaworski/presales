@@ -8,8 +8,6 @@
 </template>
 
 <script>
-import {TaskModel} from "../../model/task";
-
 export default {
   name: "Task",
   props: {
