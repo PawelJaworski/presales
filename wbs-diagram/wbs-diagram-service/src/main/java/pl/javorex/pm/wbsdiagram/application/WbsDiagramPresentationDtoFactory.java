@@ -9,17 +9,22 @@ final class WbsDiagramPresentationDtoFactory {
     private final TaskPresentationDtoFactory taskDtoFactory = new TaskPresentationDtoFactory();
 
     WbsDiagramPresentationDto fromProject(WbsDiagram diagram) {
-        Task taskDivision = diagram.getTaskDivision();
+        Task rootTask = diagram.getRootTask();
         return new WbsDiagramPresentationDto() {
             @Override
-            public String getName() {
-                return taskDivision.getName();
+            public String getProjectId() {
+                return diagram.getProjectId();
             }
 
             @Override
-            public List<TaskPresentationDto> getTasks() {
+            public String getName() {
+                return rootTask.getName();
+            }
+
+             @Override
+            public TaskPresentationDto getRootTask() {
                 return taskDtoFactory
-                        .fromTaskList( taskDivision.getChildren() );
+                        .fromTask( rootTask );
             }
         };
     }

@@ -3,7 +3,9 @@ package pl.javorex.pm.wbsdiagram.application;
 import pl.javorex.pm.wbsdiagram.application.response.TaskPresentationDto;
 import pl.javorex.pm.wbsdiagram.domain.model.Task;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 final class TaskPresentationDtoFactory {
@@ -20,8 +22,18 @@ final class TaskPresentationDtoFactory {
             }
 
             @Override
+            public Optional<BigDecimal> getEstimation() {
+                return task.getEstimation();
+            }
+
+            @Override
             public String getName() {
                 return task.getName();
+            }
+
+            @Override
+            public List<String> getCategories() {
+                return task.getCategories();
             }
 
             @Override

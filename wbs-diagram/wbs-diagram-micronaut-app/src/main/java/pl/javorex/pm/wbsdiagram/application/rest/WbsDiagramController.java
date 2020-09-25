@@ -10,16 +10,16 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller("/wbsDiagrams")
-public class ProjectController implements WbsDiagramQueryFacade {
+public class WbsDiagramController {
     private final WbsDiagramQueryFacade queryFacade;
 
-    ProjectController(WbsDiagramQueryFacade queryFacade) {
+    WbsDiagramController(WbsDiagramQueryFacade queryFacade) {
         this.queryFacade = queryFacade;
     }
 
-    @Override
-    public Optional<WbsDiagramPresentationDto> findDiagramByProjectId(String projectId) {
-        return queryFacade.findDiagramByProjectId(projectId);
+    @Get("/{diagramId}")
+    public Optional<WbsDiagramPresentationDto> findDiagramByProjectId(@PathVariable String diagramId) {
+        return queryFacade.findDiagramByProjectId(diagramId);
     }
 
     @Get

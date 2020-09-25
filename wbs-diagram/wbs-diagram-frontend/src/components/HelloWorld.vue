@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      rootTask: new Task("dupa")
+      rootTask: new Task("test")
     }
   }
 }

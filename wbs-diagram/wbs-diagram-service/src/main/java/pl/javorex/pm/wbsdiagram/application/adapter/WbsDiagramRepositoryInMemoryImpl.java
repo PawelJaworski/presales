@@ -7,22 +7,27 @@ import pl.javorex.pm.wbsdiagram.domain.repository.WbsDiagramRepository;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.math.BigDecimal.valueOf;
+
 public class WbsDiagramRepositoryInMemoryImpl implements WbsDiagramRepository {
     private static long currentTaskId = 1;
     private final Map<String, WbsDiagram> wbsDiagrams = new HashMap<>();
 
     public WbsDiagramRepositoryInMemoryImpl() {
-        for (int i = 1; i < 20; ++i){
+        for (int i = 1; i < 2; ++i){
             WbsDiagram diagram = new WbsDiagram("" + i, "Project " + i);
-            Task subtask1 = new Task("Subtask 1 of " + i);
-            subtask1.assignId(currentTaskId++);
-            diagram.getTaskDivision()
-                    .addTask(subtask1);
+            Task devTask = generateTask("Development");
+            devTask.addTask( generateTask("Backend Dev", "BACKEND", "REST") );
+            devTask.addTask( generateTask("Frontend Dev", "FRONTEND") );
+            diagram.getRootTask()
+                    .addTask(devTask);
 
-            Task subtask2 = new Task("Subtask 2 of " + i);
-            subtask2.assignId(currentTaskId++);
-            diagram.getTaskDivision()
-                    .addTask(subtask2);
+            Task devopsTask = generateTask("Devops", "DEVOPS");
+            diagram.getRootTask()
+                    .addTask(devopsTask);
+            devopsTask.addTask(generateTask("Local ENV"));
+            devopsTask.addTask(generateTask("Local TEST"));
+            devopsTask.addTask(generateTask("Local PROD"));
             wbsDiagrams.put("" + i, diagram);
         }
     }
@@ -46,5 +51,15 @@ public class WbsDiagramRepositoryInMemoryImpl implements WbsDiagramRepository {
         }
 
         return Optional.empty();
+    }
+
+    private Task generateTask(String name, String... category) {
+        Task task = new Task(name);
+        task.assignId(currentTaskId++);
+        task.estimate(valueOf(new Random().nextInt(100) + 1));
+        Arrays.stream(category)
+                .forEach( it -> task.assignToCategory(it) );
+
+        return task;
     }
 }

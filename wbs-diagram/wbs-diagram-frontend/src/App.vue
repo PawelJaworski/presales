@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Diagram/>
+    <Diagram server_context="http://localhost:8002"/>
   </div>
 </template>
 

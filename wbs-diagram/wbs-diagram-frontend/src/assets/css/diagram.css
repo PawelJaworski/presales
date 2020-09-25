@@ -10,6 +10,8 @@
 .tree {
     margin: 0 0 1em;
     text-align: center;
+    margin: auto;
+    width: 50%;
 }
 
 .tree,
